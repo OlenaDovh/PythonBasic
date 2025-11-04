@@ -21,7 +21,7 @@ if not lst or len(lst) == 1:
     print(lst)
 else:
     lst_length = len(lst)
-    last_value = lst[lst_length-1]
+    last_value = lst[-1]
     lst.remove(last_value)
     lst.insert(0, last_value)
     print(lst)

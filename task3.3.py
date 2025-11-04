@@ -17,21 +17,18 @@
 [] => [[], []]
 """
 
-lst = [1, 2, 3, 4, 5, 6]
+# lst = [1, 2, 3, 4, 5, 6]
 # lst = [1, 2, 3]
 # lst = [1, 2, 3, 4, 5]
 # lst = [1]
-# lst = []
+lst = []
 new_lst = []
 
 if len(lst) % 2 == 0:
     init_index = int(len(lst) / 2)
     new_lst = [lst[:init_index], lst[init_index:]]
     print(new_lst)
-elif len(lst) % 2 > 0:
+else:
     init_index = int(len(lst) / 2)
     new_lst = [lst[:init_index+1], lst[init_index+1:]]
-    print(new_lst)
-else:
-    new_lst = [[], []]
     print(new_lst)
