@@ -22,8 +22,8 @@
 7948799 -> 91 день, 23:59:59
 """
 
-# input_sec = 0 #-> 0 днів, 00:00:00                18
-input_sec = 224930 #-> 2 дні, 14:28:50
+input_sec = 0 #-> 0 днів, 00:00:00
+# input_sec = 224930 #-> 2 дні, 14:28:50
 # input_sec = 466289 #-> 5 днів, 09:31:29
 # input_sec = 950400 #-> 11 днів, 00:00:00
 # input_sec = 1209600 #-> 14 днів, 00:00:00
@@ -36,9 +36,22 @@ days = 0
 hours = 0
 minutes = 0
 seconds = 0
+day_name = ""
 
-if 0 <= input_sec <= 8640000:
-    minutes, seconds = divmod(input_sec, 60)
-    hours, minutes = divmod(minutes, 60)
-    days, hours = divmod(hours, 60)
-    print(days, hours, minutes, seconds)
+sec_in_minutes = 60
+sec_in_hours = 60 * 60
+sec_in_day = 60 * 60 * 24
+
+if 0 <= input_sec < 8640000:
+    days, tmp = divmod(input_sec, sec_in_day)
+    hours, tmp = divmod(tmp, sec_in_hours)
+    minutes, seconds = divmod(tmp, sec_in_minutes)
+
+day_type = {0: "днів", 1:"день", 2: "дні", 3: "дні", 4: "дні"}
+
+if 11 <= days % 100 <=14:
+    day_name = day_type[0]
+else:
+    day_name = day_type.get(days % 10, "днів")
+
+print(f"{days} {day_name}, {str(hours).zfill(2)}:{str(minutes).zfill(2)}:{str(seconds).zfill(2)}")
