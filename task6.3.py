@@ -13,3 +13,20 @@
 25 -> 0
 1 -> 1
 """
+
+input_num = int(input("Please enter an integer "))
+
+# input_num = 99 #-> 2
+# input_num = 1000 #-> 0
+# input_num = 423 #-> 8
+# input_num = 33 #-> 9
+# input_num = 25 #-> 0
+# input_num = 1 #-> 1
+
+
+while input_num > 9:
+    result = 1
+    for num in str(input_num):
+        result *= int(num)
+    input_num = result
+print(input_num)

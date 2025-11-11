@@ -21,3 +21,24 @@
 22493 -> 0 днів, 06:14:53
 7948799 -> 91 день, 23:59:59
 """
+
+# input_sec = 0 #-> 0 днів, 00:00:00                18
+input_sec = 224930 #-> 2 дні, 14:28:50
+# input_sec = 466289 #-> 5 днів, 09:31:29
+# input_sec = 950400 #-> 11 днів, 00:00:00
+# input_sec = 1209600 #-> 14 днів, 00:00:00
+# input_sec = 1900800 #-> 22 дні, 00:00:00
+# input_sec = 8639999 #-> 99 днів, 23:59:59
+# input_sec = 22493 #-> 0 днів, 06:14:53
+# input_sec = 7948799 #-> 91 день, 23:59:59
+
+days = 0
+hours = 0
+minutes = 0
+seconds = 0
+
+if 0 <= input_sec <= 8640000:
+    minutes, seconds = divmod(input_sec, 60)
+    hours, minutes = divmod(minutes, 60)
+    days, hours = divmod(hours, 60)
+    print(days, hours, minutes, seconds)
