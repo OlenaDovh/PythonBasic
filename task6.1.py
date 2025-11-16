@@ -11,16 +11,14 @@
 """
 import string
 
-input_set = "a-c" #-> abc
+# input_set = "a-c" #-> abc
 # input_set = "a-a" #-> a
 # input_set = "s-H" #-> stuvwxyzABCDEFGH
-# input_set = "a-A" #-> abcdefghijklmnopqrstuvwxyzA
+input_set = "a-A" #-> abcdefghijklmnopqrstuvwxyzA
 
 start_index = string.ascii_letters.find(input_set[0])
 end_index = string.ascii_letters.find(input_set[-1])
-result = ""
 
-for char in range(start_index, end_index + 1):
-    result += string.ascii_letters[char]
+result = string.ascii_letters[start_index:end_index + 1]
 
 print(result)

@@ -31,7 +31,7 @@ assert_exception => True
 import keyword
 import string
 
-# input_var = "" # => False
+input_var = "" # => False
 # input_var = "_" # => True
 # input_var = "__" # => False
 # input_var = "___" # => False
@@ -46,19 +46,23 @@ import string
 # input_var = "3m" # => False
 # input_var = "m3" # => True
 # input_var = "assert" # => False
-input_var = "assert_exception" # => True
+# input_var = "assert_exception" # => True
 
 approval_for_var = False
 
 # рядок не пустий
 if input_var:
-    # рядок не є зарезервованим словом, не починається з цифри, не має більше 1 нижнього підкреслення підряд
-    if  not keyword.iskeyword(input_var) and not input_var[0].isdigit() and not "__" in input_var:
+    # рядок не є зарезервованим словом
+    if  not keyword.iskeyword(input_var):
         # рядок не має спец. симоволів
         if all (char not in string.punctuation.replace("_", "") for char in input_var):
             # рядок не має пробілів і великих літер
             if all(not (char.isspace() or char.isupper()) for char in input_var):
-                # тоді рядок можна вважати правильною назвою змінної
-                approval_for_var = True
+                # рядок не починається з цифри
+                if not input_var[0].isdigit():
+                    # рядок не має більше 1 нижнього підкреслення підряд
+                    if not "__" in input_var:
+                        # тоді рядок можна вважати правильною назвою змінної
+                        approval_for_var = True
 
 print("Variable name is", approval_for_var)
