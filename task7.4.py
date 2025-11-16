@@ -25,3 +25,4 @@ def common_elements():
     return multiples_of_3_and_5
 
 assert common_elements() == {0, 75, 45, 15, 90, 60, 30}
+print('ОК')

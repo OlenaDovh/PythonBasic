@@ -14,7 +14,6 @@ print('ОК')
 
 def say_hi(name, age):
     greeting = f"Hi. My name is {name} and I'm {age} years old"
-    print(greeting)
     return greeting
 
 
