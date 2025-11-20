@@ -54,10 +54,10 @@ approval_for_var = False
 if input_var:
     # рядок не є зарезервованим словом
     if  not keyword.iskeyword(input_var):
-        # рядок не має спец. симоволів
-        if all (char not in string.punctuation.replace("_", "") for char in input_var):
-            # рядок не має пробілів і великих літер
-            if all(not (char.isspace() or char.isupper()) for char in input_var):
+        # рядок не має спец. симоволів і пробіл
+        if all (char not in string.punctuation.replace("_", " ") for char in input_var):
+            # рядок не має великих літер
+            if not (char.isupper() for char in input_var):
                 # рядок не починається з цифри
                 if not input_var[0].isdigit():
                     # рядок не має більше 1 нижнього підкреслення підряд
