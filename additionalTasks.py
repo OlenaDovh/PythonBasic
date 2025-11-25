@@ -13,7 +13,7 @@
 # assert reverse_words("Just a test") == 'tsuJ a tset', 'Test4'
 # assert reverse_words("123 456") == '321 654', 'Test5'
 # print("OK")
-
+# from math import sqrt
 
 
 #TASK_2
@@ -26,16 +26,66 @@
 # print(calculate_circle_area(10))
 
 # TASK_3
-def find_gcd(a, b):
-    gcd = 0
-    dil = 1
-    while dil > 0:
-        dil = divmod(a, b)
-        dil = divmod(b,dil)
-    print(dil)
+# def find_gcd(a, b):
+#     max_num = max(a, b)
+#     min_num = min(a, b)
+#     remainder = 1
+#     while min_num > 0:
+#         remainder = max_num % min_num
+#         max_num, min_num = min_num, remainder
+#     return max_num
+#
+# find_gcd(1071, 462)
 
+#TASK4
+# def sum_of_digits(number):
+#     number = str(number)
+#     sign = ""
+#     summa = 0
+#     for i in number:
+#         if i.isalnum():
+#             summa += int(i)
+#     return summa
+#
+# sum_of_digits(-456)
 
-    print(divmod(a, 10))
-    print(divmod(b, 10))
+#TASK5
+# def get_option(lst):
+#     max_gold = 0
+#     options = []
+#     if len(lst) -1 == None:
+#         return max_gold
+#     else:
 
-find_gcd(7, 11)
+# TASK6
+# def calculator(num1, num2, operation):
+#     if operation == "+":
+#         result = num1 + num2
+#     elif operation == "-":
+#         result = num1 - num2
+#     elif operation == "*":
+#         result = num1 * num2
+#     elif operation == "/":
+#         result = num1 / num2 if num2 else 0
+#     else:
+#         result = 0
+#
+#     return result
+
+#TASK7
+# def multiply_even_numbers(numbers):
+#     """
+#     Помножує всі парні числа у списку на 2.
+#
+#     :param numbers: Список чисел.
+#     :return: Новий список з парними числами, помноженими на 2.
+#     """
+#     result = []
+#     for i in numbers:
+#         print(i, numbers, result)
+#         if i % 2 == 0:
+#             result.append(i * 2)
+#     return result
+#
+# # Перевірка
+# assert multiply_even_numbers([1, 2, 3, 4, 5, 6]) == [4, 8, 12]
