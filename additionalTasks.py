@@ -89,3 +89,23 @@
 #
 # # Перевірка
 # assert multiply_even_numbers([1, 2, 3, 4, 5, 6]) == [4, 8, 12]
+
+#TASK10.2
+
+# def is_even(digit):
+#     if digit == 0:
+#         return True
+#     if digit == 1:
+#         return False
+#     else:
+#         return is_even(digit - 2)
+
+
+# import timeit
+#
+# def measure(value):
+#     return timeit.timeit(lambda: is_even(value), number=1_000_000)
+#
+# print(measure(10))
+# print(measure(123456789))
+# print(measure(2**1000))

@@ -3,14 +3,8 @@
 Вхідні дані: Ціле число.
 Вихідні дані: Логічний тип.
 """
-
 def is_even(digit):
-    if digit == 0:
-        return True
-    if digit == 1:
-        return False
-    else:
-        return is_even(digit - 2)
+    return digit % 2 == 0
 
 assert is_even(2) == True, 'Test1'
 assert is_even(5) == False, 'Test2'
