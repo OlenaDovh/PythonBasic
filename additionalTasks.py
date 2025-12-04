@@ -109,3 +109,61 @@
 # print(measure(10))
 # print(measure(123456789))
 # print(measure(2**1000))
+
+#Створіть функцію, яка приймає список чисел і повертає новий список, де кожне число замінено його квадратом.
+
+# def square_numbers(numbers):
+#     """
+#     Замінює кожне число у списку його квадратом.
+#
+#     :param numbers: Список чисел.
+#     :return: Новий список з квадратами чисел.
+#     """
+#     result = []
+#     if not numbers:
+#         return result
+#
+#     result = [numbers[0] ** 2] + square_numbers(numbers[1:])
+#     return result
+#
+# # Перевірка
+# assert square_numbers([1, 2, 3, 4, 5]) == [1, 4, 9, 16, 25]
+# assert square_numbers([0, -1, -2, -3]) == [0, 1, 4, 9]
+# assert square_numbers([]) == []
+# print("OK")
+
+#Напишіть рекурсивну функцію для обчислення факторіалу числа.
+
+# def factorial(num):
+#     """
+#     Обчислює факторіал числа num.
+#
+#     :param n: Ціле число.
+#     :return: Факторіал числа num.
+#     """
+#
+#     if num == 0:
+#         return 1
+#
+#     return num * factorial(num - 1)
+#
+# # Перевірка
+# assert factorial(5) == 120
+
+
+
+# TASK
+# def prime_generator(end):
+#     for num in range(2, end + 1):
+#         is_prime = True
+#         for i in range(2, int(num ** 0.5) + 1):
+#             if num % i == 0:
+#                 is_prime = False
+#                 break
+#         if is_prime:
+#             yield num
+#
+#
+# print(list(prime_generator(10)))
+# print(list(prime_generator(15)))
+# print(list(prime_generator(29)))
