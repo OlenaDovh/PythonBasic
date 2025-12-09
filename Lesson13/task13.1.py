@@ -39,17 +39,14 @@ class Group:
         self.group.add(student)
 
     def delete_student(self, last_name):
-        if self.find_student(last_name):
-            self.group.pop(last_name)
+        searched_student = self.find_student(last_name)
+        self.group.discard(searched_student)
 
     def find_student(self, last_name):
-        if not last_name in self.group:
-            return None
-        tmp = ''
         for student in self.group:
-            if student.last_name in self.group:
-                tmp = f"{str(self.group)}\n"
-        return tmp
+            if student.last_name == last_name:
+                return student
+        return None
 
     def __str__(self):
         all_students = ''
