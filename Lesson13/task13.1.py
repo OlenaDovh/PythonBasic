@@ -27,7 +27,7 @@ class Student(Human):
         self.record_book = record_book
 
     def __str__(self):
-        return f'Student: {super.__str__(self)}, record No: {self.record_book}'
+        return f'Student: {super().__str__()}, record No: {self.record_book}'
 
 class Group:
 
